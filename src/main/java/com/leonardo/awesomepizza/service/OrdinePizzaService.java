@@ -9,7 +9,5 @@ public interface OrdinePizzaService {
 
 	OrdinePizza addOrdinePizza(OrdinePizza ordinePizza);
 	
-	//void addOrdiniPizze(Set<OrdinePizza> ordiniPizze);
-	
 	Set<OrdinePizzaDto> getListaPizze(Long ordineId);
 }

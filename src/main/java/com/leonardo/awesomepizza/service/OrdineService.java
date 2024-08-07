@@ -8,7 +8,6 @@ import com.leonardo.awesomepizza.model.dto.OrdineDto;
 
 public interface OrdineService {
 	
-	//OrdineDto creaOrdine(OrdineDto ordine);
 	OrdineDto creaOrdine(CreaOrdineRequest ordine);
 	
 	OrdineDto preparaOrdine();

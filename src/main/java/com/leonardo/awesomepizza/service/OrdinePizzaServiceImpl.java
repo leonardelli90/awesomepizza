@@ -41,18 +41,6 @@ public class OrdinePizzaServiceImpl implements OrdinePizzaService {
 		return Collections.emptySet();
 	}
 	
-	/*
-	@Override
-	@Transactional
-	public void addOrdiniPizze(Set<OrdinePizza> ordiniPizze) {
-		
-		for (OrdinePizza ordinePizza : ordiniPizze) {
-			repository.save(ordinePizza);
-		}
-		
-	}
-	*/
-	
 	@Override
 	@Transactional
 	public OrdinePizza addOrdinePizza(OrdinePizza ordinePizza) {
