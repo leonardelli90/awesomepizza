@@ -34,7 +34,7 @@ Per mappare il database sono state create 4 entity per il progetto:
 * `Ordine`, contiene le informazioni relative all'ordine
 * `Pizza`, contiene le informazioni relative alle pizze che possono essere ordinate
 * `Utente`, contiene le informazioni relative all'utente che crea l'ordine
-* `OrdinePizza`, utilizzato per la relazione N-N presente tra ordine e pizza.
+* `OrdinePizza`, tabella associativa per la relazione N-N presente tra ordine e pizza.
 
 ## Controller
 
@@ -108,3 +108,13 @@ Sono state definite 2 exception custom:
 * `DatoNotFoundException`, questa viene rilanciata quando non si trovano dati per i parametri passati.
 
 per gestire queste 2 eccezioni è stato utilizzata la classe _RestExceptionHandler_ annotandola con `@RestControllerAdvice`.
+
+## Classi di supporto
+
+Sono stati creati 2 enum:
+* `MessaggioErroreEnum`, contiene tutti i possibili messaggi di errore.
+* `StatoEnum`, contiene i possibili stati i cui si può trovare un ordine.
+
+Per alcune chiamate sono stati create classi di request e response ad-hoc.
+
+Inoltre sono stati creati i DTO delle varie entity.
