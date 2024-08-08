@@ -19,7 +19,7 @@ Per il progetto sono state utilizzate le seguenti tecnologie:
 
 ## Architettura
 
-Per implementare questa prima istanza del portare ho deciso di impostare il progetto utilizzando un architettura Controller-Service-Repository.
+Per implementare questa prima istanza del portale ho deciso di impostare il progetto utilizzando un architettura Controller-Service-Repository.
 
 Il controller gestische l'interfaccia REST.
 
@@ -34,7 +34,7 @@ Per mappare il database sono state create 4 entity per il progetto:
 * `Ordine`, contiene le informazioni relative all'ordine
 * `Pizza`, contiene le informazioni relative alle pizze che possono essere ordinate
 * `Utente`, contiene le informazioni relative all'utente che crea l'ordine
-* `OrdinePizza`, tabella associativa per la relazione N-N presente tra ordine e pizza.
+* `OrdinePizza`, tabella associativa per la relazione N-N presente tra ordine e pizza
 
 ## Controller
 
@@ -48,10 +48,10 @@ All'interno del progetto sono stati creati 3 controller
 
 Chiamate:
 
-* `creaOrdine` - permette di creare il nuovo ordine.
-* `preparaOrdine` - permette di cambiare lo stato da `IN_CODA` a `IN_PREPARAZIONE`, sono stati implementati 2 metodi, uno che cambia lo stato all'ordine più vecchio, un secondo che cambia lo stato in base ad un id ordine.
-* `ordiniPerStato` - permette di mostrare la lista degli ordini per stato, se viene passato come stato il valore `ALL` vengono mostrati tutti gli ordini.
-* `completaOrdine` - permette di completare gli ordini `IN_PREPARAZIONE` a `PRONTO` passando l'id dell'ordine.
+* `creaOrdine` - permette di creare il nuovo ordine
+* `preparaOrdine` - permette di cambiare lo stato da `IN_CODA` a `IN_PREPARAZIONE`, sono stati implementati 2 metodi, uno che cambia lo stato all'ordine più vecchio, un secondo che cambia lo stato in base ad un id ordine
+* `ordiniPerStato` - permette di mostrare la lista degli ordini per stato, se viene passato come stato il valore `ALL` vengono mostrati tutti gli ordini
+* `completaOrdine` - permette di completare gli ordini `IN_PREPARAZIONE` a `PRONTO` passando l'id dell'ordine
 
 Possibili evoluzioni:
 
@@ -61,11 +61,11 @@ Si potrebbe creare una implementazione di preparaOrdine in cui vengono gestiti p
 
 Chiamate: 
 
-* `getMenuPizze` - permette di recuperare l'elenco di tutte le pizze presenti sul database.
+* `getMenuPizze` - permette di recuperare l'elenco di tutte le pizze presenti sul database
 
 Possibili evoluzioni:
 
-Agginta chiamate di gestione delle pizze (insert, update, delete)
+Aggiunta chiamate di gestione delle pizze (insert, update, delete)
 
 ### UtenteController
 
@@ -75,7 +75,7 @@ Chiamate:
 
 Possibili evoluzioni:
 
-Agginta chiamate di gestione degli utenti (insert, update, delete)
+Agginuta chiamate di gestione degli utenti (insert, update, delete)
 
 ## Service
 
@@ -84,7 +84,7 @@ All'interno del progetto sono stati creati 5 service
 * `OrdineService`
 * `PizzaService`
 * `UtenteService`
-* `OrdineUtenteService`, contiene parte della logica di business di `getStatoOrdine` creato per evitare dipendenze circolari all'interdo della SpringApplication
+* `OrdineUtenteService`, contiene parte della logica di business di `getStatoOrdine` creato per evitare dipendenze circolari all'interno della SpringApplication
 * `OrdinePizzaService`, contiene la logica per valorizzare la tabella associativa `OrdinePizza`
 
 ## Repository
@@ -105,9 +105,9 @@ In alternativia si sarebbe potuto utilizzare il tag `@Query` e passare al suo in
 Sono state definite 2 exception custom:
 
 * `CheckException`, questa viene rilanciata quando ci sono errori logici, ad esempio si prova a passare uno stato da `IN_CODA` a `PRONTO`
-* `DatoNotFoundException`, questa viene rilanciata quando non si trovano dati per i parametri passati.
+* `DatoNotFoundException`, questa viene rilanciata quando non si trovano dati per i parametri passati
 
-per gestire queste 2 eccezioni è stato utilizzata la classe _RestExceptionHandler_ annotandola con `@RestControllerAdvice`.
+per gestire queste 2 eccezioni è stato utilizzata la classe _RestExceptionHandler_ annotandola con `@RestControllerAdvice`
 
 ## Classi di supporto
 
